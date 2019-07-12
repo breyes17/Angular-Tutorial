@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularProject';
+  sRecipe : boolean
+  sShop : boolean
+
+  onGetHeader(getOutput:{rec: boolean, shop : boolean}){
+    this.sRecipe = getOutput.rec
+    this.sShop = getOutput.shop
+  }
 }
