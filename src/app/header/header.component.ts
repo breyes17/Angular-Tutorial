@@ -7,26 +7,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-@Output() outputShopRec = new EventEmitter<{rec: boolean, shop : boolean}>();
- recBool: boolean;
- shopBool : boolean;
+@Output() outputShopRec = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
   }
 
   showComp(str : string){
-    if(str == 'rec'){
-      this.outputShopRec.emit({
-        rec : this.recBool = true,
-        shop : this.shopBool = false
-      })
-    } else {
-      this.outputShopRec.emit({
-        rec : this.recBool = false,
-        shop : this.shopBool = true
-      })
-    }
+      this.outputShopRec.emit(str)
   }
 
 }
